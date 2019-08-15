@@ -5,15 +5,6 @@ import { AlertController } from "@ionic/angular";
 import { MyseviceService } from "../services/mysevice.service";
 import { MenuController } from "@ionic/angular";
 
-// import { Observable, of, throwError } from "rxjs";
-// import {
-// HttpClient,
-// HttpHeaders,
-// HttpErrorResponse,
-// HttpParams
-// } from "@angular/common/http";
-// import { catchError, tap, map } from "rxjs/operators";
-
 @Component({
   selector: "app-home",
   templateUrl: "home.page.html",
@@ -47,5 +38,4 @@ export class HomePage implements OnInit {
   ionViewDidEnter() {
     console.log("ionViewDidEnter");
   }
-
 }
