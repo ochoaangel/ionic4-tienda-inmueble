@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Detalle de Inmueble
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img src="./assets/myimages/c01.jpg">  </ion-img>
+  <ion-card > 
+    <ion-card-subtitle padding>Precio</ion-card-subtitle>
+
+    <!-- <ion-card-title padding>100.000.000 $</ion-card-title> -->
+
+
+    <ion-grid >
+        <ion-row justify-content-center align-items-center >
+          <h1>100.000.000 $</h1>
+        </ion-row>
+      </ion-grid>
+
+
+
+
+
+  </ion-card>
+  <ion-grid>
+    <ion-row justify-content-center align-items-center>
+      <!-- <ion-col size="6" size-lg="1"  size-md="2" size-sm="3" size-xs="6" *ngFor="let c of [1, 1, 1, 1, 1, 1, 1, 1]"> -->
+      <ion-card *ngFor="let c of [1, 1, 1, 1, 1, 1, 1, 1]">
+        <ion-card-title>Dato {{c}}:</ion-card-title>
+        <ion-card-content>XXXX.XX.x..</ion-card-content>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+
+  <ion-card>
+    <ion-card-subtitle>Ubicación</ion-card-subtitle>
+    <ion-card-content
+      >Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah
+      Blah Blah
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-subtitle>Descripción Adicional</ion-card-subtitle>
+    <ion-card-content
+      >Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah
+      Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah
+      Blah Blah Blah
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-button expand="fill" color="primary" routerLink="/login">Planificar Visita</ion-button>

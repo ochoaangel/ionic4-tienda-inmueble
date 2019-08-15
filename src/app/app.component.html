@@ -1,0 +1,58 @@
+<ion-app>
+  <ion-split-pane>
+    <ion-menu type="overlay" (ionWillOpen)='actualizarmenu()'>
+      <ion-header>
+        <ion-grid>
+          <ion-row justify-content-center align-items-center>
+            <!-- <ion-title>TiendaInmueble</ion-title> -->
+            <ion-label padding>TiendaInmueble</ion-label>
+          </ion-row>
+          <ion-row>
+            <!-- <ion-toolbar> -->
+            <ion-img src="../assets/myimages/logo.jpg"></ion-img>
+            <!-- </ion-toolbar> -->
+          </ion-row>
+          <ion-row justify-content-center align-items-center>
+            <!-- <ion-toolbar> -->
+            <ion-chip>
+              <ion-avatar>
+                <img src="../assets/myimages/user02.png" />
+              </ion-avatar>
+              <ion-label>{{email}}</ion-label>
+            </ion-chip>
+            <!-- </ion-toolbar> -->
+          </ion-row>
+        </ion-grid>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+              <ion-icon slot="start" [name]="p.icon"></ion-icon>
+              <ion-label>
+                {{ p.title }}
+              </ion-label>
+            </ion-item>
+
+
+            
+
+
+          </ion-menu-toggle>
+        </ion-list>
+
+        <!-- <ion-list routerLink="/login" *ngIf="btniniciar">
+          <ion-menu-toggle auto-hide="false">
+            <ion-item>
+              <ion-icon slot="start"></ion-icon>
+              <ion-label expand="full">
+                INICIA SESIÓN
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list> -->
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

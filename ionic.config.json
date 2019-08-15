@@ -1,0 +1,7 @@
+{
+  "name": "tiendainmueble",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Bienvenid@ a nuesta APP..
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <form #formulario="ngForm" (ngSubmit)="onSubmitTemplate()">
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating"
+              >Ingrese su Usuario (Correo)</ion-label
+            >
+            <ion-input
+              required
+              clearInput
+              type="email"
+              name="email"
+              [(ngModel)]="usuario.email"
+              placeholder="tu_correo@correo.com"
+              pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Ingrese su Contraseña</ion-label>
+            <ion-input
+              required
+              clearInput
+              type="password"
+              name="password"
+              [(ngModel)]="usuario.password"
+              placeholder="Contraseña"
+              pattern="^([a-zA-Z0-9_\-\.]{5,20})$"
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating"
+              >Vuelva a ingresar su Contraseña</ion-label
+            >
+            <ion-input
+              required
+              clearInput
+              type="password"
+              name="password2"
+              [(ngModel)]="usuario.password2"
+              placeholder="Contraseña"
+              pattern="^([a-zA-Z0-9_\-\.]{5,20})$"
+            ></ion-input>
+          </ion-item>
+        </ion-list>
+        <ion-button expand="full" type="submit" [disabled]="formulario.invalid"
+          >Registrarse</ion-button
+        >
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
