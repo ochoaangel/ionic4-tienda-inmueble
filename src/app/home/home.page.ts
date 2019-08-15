@@ -5,7 +5,7 @@ import { AlertController } from "@ionic/angular";
 import { MyseviceService } from "../services/mysevice.service";
 import { MenuController } from "@ionic/angular";
 
-
+//
 @Component({
   selector: "app-home",
   templateUrl: "home.page.html",
