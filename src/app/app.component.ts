@@ -5,7 +5,8 @@ import { HttpClient } from "@angular/common/http";
 import { Platform } from "@ionic/angular";
 import { SplashScreen } from "@ionic-native/splash-screen/ngx";
 import { StatusBar } from "@ionic-native/status-bar/ngx";
-
+import { Storage } from "@ionic/storage";
+import { MyseviceService } from "./services/mysevice.service";
 @Component({
   selector: "app-root",
   templateUrl: "app.component.html",
@@ -15,25 +16,12 @@ export class AppComponent implements OnInit {
   // user: any;
   user = window["user"];
   btniniciar: boolean = true;
-  email = "Usuario";
+  email: string = "Usuario";
 
   ngOnInit() {
-    //guardo los inmuebles en variable global
-    this.http.get("http://192.168.16.106:8081/inmuebles").subscribe(data => {
-      window["inmuebles"] = data;
-      console.log("guardado inmuebles");
-
-      console.log(this.user);
-      if (this.user.length == 0) {
-        // caso de usuario logeado
-        this.btniniciar = true;
-      } else {
-        this.btniniciar = false;
-        // caso de usuario NO logeado
-      }
-    });
-
-    //
+    console.log("ngOnInit desde app.components solo la primera ves...");
+    this.myservicio.getinmuebles();
+    console.log("cargando inmuebels");
   }
   // tslint:disable-next-line: member-ordering
   public appPages = [
@@ -68,7 +56,9 @@ export class AppComponent implements OnInit {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    public http: HttpClient
+    public http: HttpClient,
+    private st: Storage,
+    private myservicio: MyseviceService // private http: HttpClient
   ) {
     this.initializeApp();
   }
@@ -82,6 +72,6 @@ export class AppComponent implements OnInit {
 
   // ionViewDidEnter(){console.log('ionViewDidEnter')}
   actualizarmenu() {
-    console.log(this.user)
+    console.log(this.user);
   }
 }

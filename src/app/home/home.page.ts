@@ -1,42 +1,65 @@
-import { Component, OnInit } from "@angular/core";
-//nuevos
-import { Router } from "@angular/router";
-import { AlertController } from "@ionic/angular";
-import { MyseviceService } from "../services/mysevice.service";
-import { MenuController } from "@ionic/angular";
+import { Component, OnInit } from '@angular/core';
+// nuevos
+import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+import { MyseviceService } from '../services/mysevice.service';
+import { MenuController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
 
 //
 @Component({
-  selector: "app-home",
-  templateUrl: "home.page.html",
-  styleUrls: ["home.page.scss"]
+  selector: 'app-home',
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss']
 })
 export class HomePage implements OnInit {
   constructor(
     private router: Router,
     private alertCtrl: AlertController,
     private myservicio: MyseviceService, // private http: HttpClient
-    private menuController: MenuController
+    private menuController: MenuController,
+    private st: Storage
   ) {}
   // url: string = "http://192.168.16.106:8081/user?id=3";
+
   user: any;
-  btniniciar: boolean = true;
+  usersigned = false;
+  email: string;
+  inmuebles:any
+  urlimage='http://192.168.16.106:8081/Images/Inmuebles/'
+
   ngOnInit() {
-    // console.log('ngOnInit')
+    console.log('ngOnInit desde home solo la primera ves...');
   }
+
   ionViewWillEnter() {
-    // console.log(window["user"]);
-    console.log("ionViewWillEnter");
+    console.log('ionViewWillEnter desde home');
+    this.st.get('inmuebles').then(val => {
+      this.inmuebles=val
+      console.log(this.inmuebles);
+      
+    });
 
-    this.user = window["user"];
-    if (this.user.length !== 0) {
-      this.btniniciar = false;
-    } else {
-      this.btniniciar = true;
-    }
+    this.st.get('user').then(val => {
+      console.log(val);
+      if (val) {
+        console.log('ddddddddddddddd');
+        this.usersigned = true;
+        this.email = val[0].user;
+      } else {
+        console.log('ffffffffffffffff');
+        this.usersigned = false;
+      }
+    });
   }
 
-  ionViewDidEnter() {
-    console.log("ionViewDidEnter");
+  cerrarsesion() {
+    this.st.remove('user');
+    this.router.navigateByUrl('login');
+    console.log('dffffffffffffffffffffffffffffffffffffff');
   }
+
+  detalleinmueble(algo:any){console.log(algo);}
+
+
 }

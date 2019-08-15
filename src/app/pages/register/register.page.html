@@ -14,9 +14,16 @@
       <form #formulario="ngForm" (ngSubmit)="onSubmitTemplate()">
         <ion-list>
           <ion-item>
+              <ion-grid *ngIf="error"
+              ><ion-row justify-content-center align-items-center
+                >Ya existe ese usuario</ion-row
+              ></ion-grid>
+          </ion-item>
+          <ion-item>
+
             <ion-label position="floating"
-              >Ingrese su Usuario (Correo)</ion-label
-            >
+              >Ingrese su Usuario (Correo)</ion-label>
+
             <ion-input
               required
               clearInput
@@ -41,16 +48,16 @@
           </ion-item>
           <ion-item>
             <ion-label position="floating"
-              >Vuelva a ingresar su Contraseña</ion-label
+              >Ingrese nu número Telefónico</ion-label
             >
             <ion-input
               required
               clearInput
-              type="password"
-              name="password2"
-              [(ngModel)]="usuario.password2"
-              placeholder="Contraseña"
-              pattern="^([a-zA-Z0-9_\-\.]{5,20})$"
+              type="numeric"
+              name="phone"
+              [(ngModel)]="usuario.phone"
+              placeholder="5804001112233"
+              pattern="^([0-9]{11,18})$"
             ></ion-input>
           </ion-item>
         </ion-list>
