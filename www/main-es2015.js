@@ -505,7 +505,7 @@ module.exports = webpackAsyncContext;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-app>\n  <ion-split-pane>\n    <ion-menu type=\"overlay\">\n      <ion-header>\n        <ion-grid>\n          <ion-row justify-content-center align-items-center>\n            <!-- <ion-title>TiendaInmueble</ion-title> -->\n            <ion-label padding>TiendaInmueble</ion-label>\n          </ion-row>\n          <ion-row>\n            <!-- <ion-toolbar> -->\n              <ion-img src=\"../assets/myimages/logo.jpg\"></ion-img> \n            <!-- </ion-toolbar> -->\n          </ion-row>\n          <ion-row justify-content-center align-items-center>\n            <!-- <ion-toolbar> -->\n              <ion-chip >\n                <ion-avatar>\n                  <img src=\"../assets/myimages/user02.png\" />\n                </ion-avatar>\n                <ion-label>Usuario</ion-label>\n              </ion-chip>\n            <!-- </ion-toolbar> -->\n          </ion-row>\n        </ion-grid>\n      </ion-header>\n      <ion-content>\n        <ion-list>\n          <ion-menu-toggle auto-hide=\"false\" *ngFor=\"let p of appPages\">\n            <ion-item [routerDirection]=\"'root'\" [routerLink]=\"[p.url]\">\n              <ion-icon slot=\"start\" [name]=\"p.icon\"></ion-icon>\n              <ion-label>\n                {{ p.title }}\n              </ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n        </ion-list>\n      </ion-content>\n    </ion-menu>\n    <ion-router-outlet main></ion-router-outlet>\n  </ion-split-pane>\n</ion-app>\n"
+module.exports = "<ion-app>\n  <ion-split-pane>\n    <ion-menu type=\"overlay\" (ionWillOpen)='actualizarmenu()'>\n      <ion-header>\n        <ion-grid>\n          <ion-row justify-content-center align-items-center>\n            <!-- <ion-title>TiendaInmueble</ion-title> -->\n            <ion-label padding>TiendaInmueble</ion-label>\n          </ion-row>\n          <ion-row>\n            <!-- <ion-toolbar> -->\n            <ion-img src=\"../assets/myimages/logo.jpg\"></ion-img>\n            <!-- </ion-toolbar> -->\n          </ion-row>\n          <ion-row justify-content-center align-items-center>\n            <!-- <ion-toolbar> -->\n            <ion-chip>\n              <ion-avatar>\n                <img src=\"../assets/myimages/user02.png\" />\n              </ion-avatar>\n              <ion-label>{{email}}</ion-label>\n            </ion-chip>\n            <!-- </ion-toolbar> -->\n          </ion-row>\n        </ion-grid>\n      </ion-header>\n      <ion-content>\n        <ion-list>\n          <ion-menu-toggle auto-hide=\"false\" *ngFor=\"let p of appPages\">\n            <ion-item [routerDirection]=\"'root'\" [routerLink]=\"[p.url]\">\n              <ion-icon slot=\"start\" [name]=\"p.icon\"></ion-icon>\n              <ion-label>\n                {{ p.title }}\n              </ion-label>\n            </ion-item>\n\n\n            \n\n\n          </ion-menu-toggle>\n        </ion-list>\n\n        <!-- <ion-list routerLink=\"/login\" *ngIf=\"btniniciar\">\n          <ion-menu-toggle auto-hide=\"false\">\n            <ion-item>\n              <ion-icon slot=\"start\"></ion-icon>\n              <ion-label expand=\"full\">\n                INICIA SESIÓN\n              </ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n        </ion-list> -->\n      </ion-content>\n    </ion-menu>\n    <ion-router-outlet main></ion-router-outlet>\n  </ion-split-pane>\n</ion-app>\n"
 
 /***/ }),
 
@@ -623,19 +623,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
-/* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ "./node_modules/@ionic-native/splash-screen/ngx/index.js");
-/* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/ngx/index.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+/* harmony import */ var _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/splash-screen/ngx */ "./node_modules/@ionic-native/splash-screen/ngx/index.js");
+/* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/ngx/index.js");
+/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/fesm2015/ionic-storage.js");
+/* harmony import */ var _services_mysevice_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./services/mysevice.service */ "./src/app/services/mysevice.service.ts");
+
+
+
 
 
 
 
 
 let AppComponent = class AppComponent {
-    constructor(platform, splashScreen, statusBar) {
+    constructor(platform, splashScreen, statusBar, http, st, myservicio // private http: HttpClient
+    ) {
         this.platform = platform;
         this.splashScreen = splashScreen;
         this.statusBar = statusBar;
+        this.http = http;
+        this.st = st;
+        this.myservicio = myservicio;
+        // user: any;
+        this.user = window["user"];
+        this.btniniciar = true;
+        this.email = "Usuario";
+        // tslint:disable-next-line: member-ordering
         this.appPages = [
             {
                 title: "Catalogo de Inmuebles",
@@ -665,17 +680,30 @@ let AppComponent = class AppComponent {
         ];
         this.initializeApp();
     }
+    ngOnInit() {
+        console.log("ngOnInit desde app.components solo la primera ves...");
+        this.myservicio.getinmuebles();
+        console.log("cargando inmuebels");
+    }
     initializeApp() {
         this.platform.ready().then(() => {
             this.statusBar.styleDefault();
             this.splashScreen.hide();
         });
     }
+    // ionViewDidEnter(){console.log('ionViewDidEnter')}
+    actualizarmenu() {
+        console.log(this.user);
+    }
 };
 AppComponent.ctorParameters = () => [
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Platform"] },
-    { type: _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_3__["SplashScreen"] },
-    { type: _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_4__["StatusBar"] }
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["Platform"] },
+    { type: _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_4__["SplashScreen"] },
+    { type: _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__["StatusBar"] },
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] },
+    { type: _ionic_storage__WEBPACK_IMPORTED_MODULE_6__["Storage"] },
+    { type: _services_mysevice_service__WEBPACK_IMPORTED_MODULE_7__["MyseviceService"] // private http: HttpClient
+     }
 ];
 AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -683,9 +711,13 @@ AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         template: __webpack_require__(/*! raw-loader!./app.component.html */ "./node_modules/raw-loader/index.js!./src/app/app.component.html"),
         styles: [__webpack_require__(/*! ./app.component.scss */ "./src/app/app.component.scss")]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["Platform"],
-        _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_3__["SplashScreen"],
-        _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_4__["StatusBar"]])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_3__["Platform"],
+        _ionic_native_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_4__["SplashScreen"],
+        _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__["StatusBar"],
+        _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"],
+        _ionic_storage__WEBPACK_IMPORTED_MODULE_6__["Storage"],
+        _services_mysevice_service__WEBPACK_IMPORTED_MODULE_7__["MyseviceService"] // private http: HttpClient
+    ])
 ], AppComponent);
 
 
@@ -711,6 +743,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/ngx/index.js");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/fesm2015/ionic-storage.js");
+
+
 
 
 
@@ -730,6 +766,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"],
             _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(),
             _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"],
+            _ionic_storage__WEBPACK_IMPORTED_MODULE_10__["IonicStorageModule"].forRoot(),
         ],
         providers: [
             _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_6__["StatusBar"],
@@ -739,6 +777,96 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
     })
 ], AppModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/mysevice.service.ts":
+/*!**********************************************!*\
+  !*** ./src/app/services/mysevice.service.ts ***!
+  \**********************************************/
+/*! exports provided: MyseviceService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MyseviceService", function() { return MyseviceService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/fesm2015/ionic-storage.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
+
+
+
+let MyseviceService = class MyseviceService {
+    constructor(httpClient, st) {
+        this.httpClient = httpClient;
+        this.st = st;
+        // variables ///////////////////
+        this.urlinmuebles = "http://localhost:8081/user?id=3";
+    }
+    ////////////////////////////////////////////////////////////////////
+    //////////////////////////// API ///////////////////////////////////
+    ////////////////////////////////////////////////////////////////////
+    getinmuebles() {
+        // guardo los inmuebles en storage
+        this.httpClient
+            .get("http://192.168.16.106:8081/inmuebles")
+            .subscribe(data => {
+            this.st.set("inmuebles", data);
+            console.log("Guardado inmuebles desde Services " + data);
+        });
+    }
+    ////////////////////////////////////////////////////////////////////
+    //////////////////////////// GENERAL ///////////////////////////////
+    ////////////////////////////////////////////////////////////////////
+    usersigned() {
+        this.st.get("user").then(valor => {
+            if (valor) {
+                console.log("Usuario registrado - desde service");
+                return true;
+            }
+            else {
+                console.log("Usuario NO registrado - desde service");
+                return false;
+            }
+        });
+    }
+    getemail() {
+        this.st.get("user").then(valor => {
+            if (valor) {
+                return valor[0].user;
+            }
+            else {
+                console.log(valor);
+                return 'no hay acceso';
+            }
+        });
+    }
+    getrol() {
+        this.st.get("user").then(valor => {
+            if (valor) {
+                return valor[0].rol;
+            }
+            else {
+                // console.log(valor);
+                return 'no hay acceso';
+            }
+        });
+    }
+}; /////////// fin my service
+MyseviceService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] },
+    { type: _ionic_storage__WEBPACK_IMPORTED_MODULE_2__["Storage"] }
+];
+MyseviceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: "root"
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"], _ionic_storage__WEBPACK_IMPORTED_MODULE_2__["Storage"]])
+], MyseviceService);
 
 
 
@@ -805,7 +933,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\MyDesarrollo\tiendainmueble\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\temp\Documents\GitHub\ionic4-tienda-inmueble\src\main.ts */"./src/main.ts");
 
 
 /***/ })

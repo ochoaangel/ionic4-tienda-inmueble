@@ -85,20 +85,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ViewClosePage", function() { return ViewClosePage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+
+
+//nuevos
 
 
 var ViewClosePage = /** @class */ (function () {
-    function ViewClosePage() {
+    function ViewClosePage(router, alertCtrl) {
+        this.router = router;
+        this.alertCtrl = alertCtrl;
     }
     ViewClosePage.prototype.ngOnInit = function () {
     };
+    ViewClosePage.ctorParameters = function () { return [
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"] }
+    ]; };
     ViewClosePage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-view-close',
             template: __webpack_require__(/*! raw-loader!./view-close.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/view-close/view-close.page.html"),
             styles: [__webpack_require__(/*! ./view-close.page.scss */ "./src/app/pages/view-close/view-close.page.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"]])
     ], ViewClosePage);
     return ViewClosePage;
 }());

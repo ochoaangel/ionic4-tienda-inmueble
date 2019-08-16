@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ion-header>\n  <ion-toolbar>\n    <ion-title>create_visit</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n</ion-content>\n"
+module.exports = "<ion-header>\n    <ion-toolbar>\n      <ion-buttons slot=\"start\">\n          <ion-back-button defaultHref=\"/\"></ion-back-button>\n      </ion-buttons>\n      <ion-title>\n          Ingresa Datos para la Visita\n      </ion-title>\n    </ion-toolbar>\n  </ion-header>\n/// link jose https://drive.google.com/open?id=1LGNS90CmPV8BlQ5GIxLytDsNJ6T3cS9B\n<!-- <ion-header>\n  <ion-toolbar>\n    <ion-title>Ingresa Datos para la Visita</ion-title>\n  </ion-toolbar>\n</ion-header> -->\n\n<ion-content>\n  <ion-card>\n    <ion-card-content>Día 1</ion-card-content>\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n          <h3>\n            <ion-datetime\n              displayFormat=\"DD/MM/YYYY\"\n              placeholder=\"Fecha Aquí\"\n              cancelText=\"Cancelar\"\n              doneText=\"Listo\"\n              mode=\"ios\"\n              [(ngModel)]=\"fechab\"\n            ></ion-datetime>\n          </h3>\n        </ion-col>\n        <ion-col>\n          <ion-grid>\n            <ion-row>\n                <!-- <h3> -->\n              <ion-datetime\n                displayFormat=\"h:mm A\"\n                minuteValues=\"0,15,30,45\"\n                cancelText=\"Cancelar\"\n                doneText=\"Listo\"\n                placeholder=\"Hora Aquí\"\n                mode=\"ios\"\n                [(ngModel)]=\"horab1\"\n              ></ion-datetime>\n              <!-- </h3> -->\n            </ion-row>\n            <ion-row>\n                <!-- <h3> -->\n              <ion-datetime\n                displayFormat=\"h:mm A\"\n                minuteValues=\"0,15,30,45\"\n                cancelText=\"Cancelar\"\n                doneText=\"Listo\"\n                placeholder=\"Hora Aquí\"\n                mode=\"ios\"\n                [(ngModel)]=\"horab2\"\n              ></ion-datetime>\n              <!-- </h3> -->\n            </ion-row>\n            <ion-row>\n                <!-- <h3> -->\n              <ion-datetime\n                displayFormat=\"h:mm A\"\n                minuteValues=\"0,15,30,45\"\n                cancelText=\"Cancelar\"\n                doneText=\"Listo\"\n                placeholder=\"Hora Aquí\"\n                mode=\"ios\"\n                [(ngModel)]=\"horab3\"\n              ></ion-datetime>\n              <!-- </h3> -->\n            </ion-row>\n          </ion-grid>\n        </ion-col> </ion-row\n    ></ion-grid>\n  </ion-card>\n  <!-- ////////// -->\n  <ion-card>\n      <ion-card-content>Día 3</ion-card-content>\n      <ion-grid>\n        <ion-row>\n          <ion-col>\n            <h3>\n              <ion-datetime\n                displayFormat=\"DD/MM/YYYY\"\n                placeholder=\"Fecha Aquí\"\n                cancelText=\"Cancelar\"\n                doneText=\"Listo\"\n                mode=\"ios\"\n                [(ngModel)]=\"fechac\"\n              ></ion-datetime>\n            </h3>\n          </ion-col>\n          <ion-col>\n            <ion-grid>\n              <ion-row>\n                  <!-- <h3> -->\n                <ion-datetime\n                  displayFormat=\"h:mm A\"\n                  minuteValues=\"0,15,30,45\"\n                  cancelText=\"Cancelar\"\n                  doneText=\"Listo\"\n                  placeholder=\"Hora Aquí\"\n                  mode=\"ios\"\n                  [(ngModel)]=\"horaa1\"\n                ></ion-datetime>\n                <!-- </h3> -->\n              </ion-row>\n              <ion-row>\n                  <!-- <h3> -->\n                <ion-datetime\n                  displayFormat=\"h:mm A\"\n                  minuteValues=\"0,15,30,45\"\n                  cancelText=\"Cancelar\"\n                  doneText=\"Listo\"\n                  placeholder=\"Hora Aquí\"\n                  mode=\"ios\"\n                  [(ngModel)]=\"horaa2\"\n                ></ion-datetime>\n                <!-- </h3> -->\n              </ion-row>\n              <ion-row>\n                  <!-- <h3> -->\n                <ion-datetime\n                  displayFormat=\"h:mm A\"\n                  minuteValues=\"0,15,30,45\"\n                  cancelText=\"Cancelar\"\n                  doneText=\"Listo\"\n                  placeholder=\"Hora Aquí\"\n                  mode=\"ios\"\n                  [(ngModel)]=\"horaa3\"\n                ></ion-datetime>\n                <!-- </h3> -->\n              </ion-row>\n            </ion-grid>\n          </ion-col> </ion-row\n      ></ion-grid>\n    </ion-card>\n    <!-- //////// -->\n    <ion-card>\n        <ion-card-content>Día 1</ion-card-content>\n        <ion-grid>\n          <ion-row>\n            <ion-col>\n              <h3>\n                <ion-datetime\n                  displayFormat=\"DD/MM/YYYY\"\n                  placeholder=\"Fecha Aquí\"\n                  cancelText=\"Cancelar\"\n                  doneText=\"Listo\"\n                  mode=\"ios\"\n                  [(ngModel)]=\"fechaa\"\n                ></ion-datetime>\n              </h3>\n            </ion-col>\n            <ion-col>\n              <ion-grid>\n                <ion-row>\n                    <!-- <h3> -->\n                  <ion-datetime\n                    displayFormat=\"h:mm A\"\n                    minuteValues=\"0,15,30,45\"\n                    cancelText=\"Cancelar\"\n                    doneText=\"Listo\"\n                    placeholder=\"Hora Aquí\"\n                    mode=\"ios\"\n                    [(ngModel)]=\"horab1\"\n                  ></ion-datetime>\n                  <!-- </h3> -->\n                </ion-row>\n                <ion-row>\n                    <!-- <h3> -->\n                  <ion-datetime\n                    displayFormat=\"h:mm A\"\n                    minuteValues=\"0,15,30,45\"\n                    cancelText=\"Cancelar\"\n                    doneText=\"Listo\"\n                    placeholder=\"Hora Aquí\"\n                    mode=\"ios\"\n                    [(ngModel)]=\"horab2\"\n                  ></ion-datetime>\n                  <!-- </h3> -->\n                </ion-row>\n                <ion-row>\n                    <!-- <h3> -->\n                  <ion-datetime\n                    displayFormat=\"h:mm A\"\n                    minuteValues=\"0,15,30,45\"\n                    cancelText=\"Cancelar\"\n                    doneText=\"Listo\"\n                    placeholder=\"Hora Aquí\"\n                    mode=\"ios\"\n                    [(ngModel)]=\"horab3\"\n                  ></ion-datetime>\n                  <!-- </h3> -->\n                </ion-row>\n              </ion-grid>\n            </ion-col> </ion-row\n        ></ion-grid>\n      </ion-card>\n  <ion-button expand=\"full\" (click)='GuardarCita()'>Guardar Cita</ion-button>\n</ion-content>\n"
 
 /***/ }),
 
@@ -85,20 +85,45 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateVisitPage", function() { return CreateVisitPage; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+
+
+//nuevos
 
 
 var CreateVisitPage = /** @class */ (function () {
-    function CreateVisitPage() {
+    function CreateVisitPage(router, alertCtrl) {
+        this.router = router;
+        this.alertCtrl = alertCtrl;
+        this.fechaa = "Fecha 1";
+        this.fechab = "Fecha 2";
+        this.fechac = "Fecha 3";
+        this.horaa1 = "Hora A";
+        this.horaa2 = "Hora B";
+        this.horaa3 = "Hora C";
+        this.horab1 = "Hora A";
+        this.horab2 = "Hora B";
+        this.horab3 = "Hora C";
+        this.horac1 = "Hora A";
+        this.horac2 = "Hora B";
+        this.horac3 = "Hora C";
     }
-    CreateVisitPage.prototype.ngOnInit = function () {
+    CreateVisitPage.prototype.ngOnInit = function () { };
+    CreateVisitPage.prototype.GuardarCita = function () {
+        console.log(this.fechaa + ' ' + this.fechab + ' ' + this.fechac + ' ');
     };
+    CreateVisitPage.ctorParameters = function () { return [
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+        { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"] }
+    ]; };
     CreateVisitPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-create-visit',
+            selector: "app-create-visit",
             template: __webpack_require__(/*! raw-loader!./create-visit.page.html */ "./node_modules/raw-loader/index.js!./src/app/pages/create-visit/create-visit.page.html"),
             styles: [__webpack_require__(/*! ./create-visit.page.scss */ "./src/app/pages/create-visit/create-visit.page.scss")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"]])
     ], CreateVisitPage);
     return CreateVisitPage;
 }());
