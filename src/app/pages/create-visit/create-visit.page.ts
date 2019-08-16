@@ -45,4 +45,8 @@ export class CreateVisitPage implements OnInit {
 
 
   ngOnInit() {}
+
+  GuardarCita(){
+    console.log(this.fechaa+' '+this.fechab+' '+this.fechac+' ')
+  }
 }

@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,65 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+// ion-content {
+// --ion-background-color:#eee;
+// }
+// ion-content {
+//     --ion-background-color: #1D976C;
+//    /* fallback for old browsers */
+//    --ion-background-color: -webkit-linear-gradient(to top, #93F9B9, #1D976C);
+//    /* Chrome 10–25, Safari 5.1–6 */
+//    --ion-background-color: linear-gradient(to top, #93F9B9, #1D976C);
+//    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+//    }
+// ion-content {
+//   --ion-background-color: rgba(255, 175, 75, 1);
+//   --ion-background-color: -moz-linear-gradient(
+//     left,
+//     rgba(255, 175, 75, 1) 0%,
+//     rgba(255, 146, 10, 1) 100%
+//   );
+//   --ion-background-color: -webkit-gradient(
+//     left top,
+//     right top,
+//     color-stop(0%, rgba(255, 175, 75, 1)),
+//     color-stop(100%, rgba(255, 146, 10, 1))
+//   );
+//   --ion-background-color: -webkit-linear-gradient(
+//     left,
+//     rgba(255, 175, 75, 1) 0%,
+//     rgba(255, 146, 10, 1) 100%
+//   );
+//   --ion-background-color: -o-linear-gradient(
+//     left,
+//     rgba(255, 175, 75, 1) 0%,
+//     rgba(255, 146, 10, 1) 100%
+//   );
+//   --ion-background-color: -ms-linear-gradient(
+//     left,
+//     rgba(255, 175, 75, 1) 0%,
+//     rgba(255, 146, 10, 1) 100%
+//   );
+//   --ion-background-color: linear-gradient(
+//     to right,
+//     rgba(255, 175, 75, 1) 0%,
+//     rgba(255, 146, 10, 1) 100%
+//   );
+//   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff920a', GradientType=1 );
+// }
+
+
+
+
+// ion-header {
+
+//     --ion-background-color: rgba(164,179,87,1);
+//     --ion-background-color: -moz-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(155,171,73,1) 19%, rgba(141,158,50,1) 49%, rgba(117,137,12,1) 100%);
+//     --ion-background-color: -webkit-gradient(left top, right top, color-stop(0%, rgba(164,179,87,1)), color-stop(19%, rgba(155,171,73,1)), color-stop(49%, rgba(141,158,50,1)), color-stop(100%, rgba(117,137,12,1)));
+//     --ion-background-color: -webkit-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(155,171,73,1) 19%, rgba(141,158,50,1) 49%, rgba(117,137,12,1) 100%);
+//     --ion-background-color: -o-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(155,171,73,1) 19%, rgba(141,158,50,1) 49%, rgba(117,137,12,1) 100%);
+//     --ion-background-color: -ms-linear-gradient(left, rgba(164,179,87,1) 0%, rgba(155,171,73,1) 19%, rgba(141,158,50,1) 49%, rgba(117,137,12,1) 100%);
+//     --ion-background-color: linear-gradient(to right, rgba(164,179,87,1) 0%, rgba(155,171,73,1) 19%, rgba(141,158,50,1) 49%, rgba(117,137,12,1) 100%);
+//     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4b357', endColorstr='#75890c', GradientType=1 );
+// }

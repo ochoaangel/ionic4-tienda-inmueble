@@ -1,8 +1,19 @@
 <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+          Ingresa Datos para la Visita
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>Ingresa Datos para la Visita</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content>
   <ion-card>
@@ -17,13 +28,14 @@
               cancelText="Cancelar"
               doneText="Listo"
               mode="ios"
+              [(ngModel)]="fechab"
             ></ion-datetime>
           </h3>
         </ion-col>
         <ion-col>
           <ion-grid>
             <ion-row>
-                <h3>
+                <!-- <h3> -->
               <ion-datetime
                 displayFormat="h:mm A"
                 minuteValues="0,15,30,45"
@@ -31,11 +43,12 @@
                 doneText="Listo"
                 placeholder="Hora Aquí"
                 mode="ios"
+                [(ngModel)]="horab1"
               ></ion-datetime>
-              </h3>
+              <!-- </h3> -->
             </ion-row>
             <ion-row>
-                <h3>
+                <!-- <h3> -->
               <ion-datetime
                 displayFormat="h:mm A"
                 minuteValues="0,15,30,45"
@@ -43,11 +56,12 @@
                 doneText="Listo"
                 placeholder="Hora Aquí"
                 mode="ios"
+                [(ngModel)]="horab2"
               ></ion-datetime>
-              </h3>
+              <!-- </h3> -->
             </ion-row>
             <ion-row>
-                <h3>
+                <!-- <h3> -->
               <ion-datetime
                 displayFormat="h:mm A"
                 minuteValues="0,15,30,45"
@@ -55,12 +69,137 @@
                 doneText="Listo"
                 placeholder="Hora Aquí"
                 mode="ios"
+                [(ngModel)]="horab3"
               ></ion-datetime>
-              </h3>
+              <!-- </h3> -->
             </ion-row>
           </ion-grid>
         </ion-col> </ion-row
     ></ion-grid>
   </ion-card>
-  <ion-button expand="full">GUARDAR</ion-button>
+  <!-- ////////// -->
+  <ion-card>
+      <ion-card-content>Día 3</ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <h3>
+              <ion-datetime
+                displayFormat="DD/MM/YYYY"
+                placeholder="Fecha Aquí"
+                cancelText="Cancelar"
+                doneText="Listo"
+                mode="ios"
+                [(ngModel)]="fechac"
+              ></ion-datetime>
+            </h3>
+          </ion-col>
+          <ion-col>
+            <ion-grid>
+              <ion-row>
+                  <!-- <h3> -->
+                <ion-datetime
+                  displayFormat="h:mm A"
+                  minuteValues="0,15,30,45"
+                  cancelText="Cancelar"
+                  doneText="Listo"
+                  placeholder="Hora Aquí"
+                  mode="ios"
+                  [(ngModel)]="horaa1"
+                ></ion-datetime>
+                <!-- </h3> -->
+              </ion-row>
+              <ion-row>
+                  <!-- <h3> -->
+                <ion-datetime
+                  displayFormat="h:mm A"
+                  minuteValues="0,15,30,45"
+                  cancelText="Cancelar"
+                  doneText="Listo"
+                  placeholder="Hora Aquí"
+                  mode="ios"
+                  [(ngModel)]="horaa2"
+                ></ion-datetime>
+                <!-- </h3> -->
+              </ion-row>
+              <ion-row>
+                  <!-- <h3> -->
+                <ion-datetime
+                  displayFormat="h:mm A"
+                  minuteValues="0,15,30,45"
+                  cancelText="Cancelar"
+                  doneText="Listo"
+                  placeholder="Hora Aquí"
+                  mode="ios"
+                  [(ngModel)]="horaa3"
+                ></ion-datetime>
+                <!-- </h3> -->
+              </ion-row>
+            </ion-grid>
+          </ion-col> </ion-row
+      ></ion-grid>
+    </ion-card>
+    <!-- //////// -->
+    <ion-card>
+        <ion-card-content>Día 1</ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <h3>
+                <ion-datetime
+                  displayFormat="DD/MM/YYYY"
+                  placeholder="Fecha Aquí"
+                  cancelText="Cancelar"
+                  doneText="Listo"
+                  mode="ios"
+                  [(ngModel)]="fechaa"
+                ></ion-datetime>
+              </h3>
+            </ion-col>
+            <ion-col>
+              <ion-grid>
+                <ion-row>
+                    <!-- <h3> -->
+                  <ion-datetime
+                    displayFormat="h:mm A"
+                    minuteValues="0,15,30,45"
+                    cancelText="Cancelar"
+                    doneText="Listo"
+                    placeholder="Hora Aquí"
+                    mode="ios"
+                    [(ngModel)]="horab1"
+                  ></ion-datetime>
+                  <!-- </h3> -->
+                </ion-row>
+                <ion-row>
+                    <!-- <h3> -->
+                  <ion-datetime
+                    displayFormat="h:mm A"
+                    minuteValues="0,15,30,45"
+                    cancelText="Cancelar"
+                    doneText="Listo"
+                    placeholder="Hora Aquí"
+                    mode="ios"
+                    [(ngModel)]="horab2"
+                  ></ion-datetime>
+                  <!-- </h3> -->
+                </ion-row>
+                <ion-row>
+                    <!-- <h3> -->
+                  <ion-datetime
+                    displayFormat="h:mm A"
+                    minuteValues="0,15,30,45"
+                    cancelText="Cancelar"
+                    doneText="Listo"
+                    placeholder="Hora Aquí"
+                    mode="ios"
+                    [(ngModel)]="horab3"
+                  ></ion-datetime>
+                  <!-- </h3> -->
+                </ion-row>
+              </ion-grid>
+            </ion-col> </ion-row
+        ></ion-grid>
+      </ion-card>
+  <ion-button expand="full" (click)='GuardarCita()'>Guardar Cita</ion-button>
 </ion-content>
