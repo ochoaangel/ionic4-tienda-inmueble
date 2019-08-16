@@ -1,9 +1,66 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>create_visit</ion-title>
+    <ion-title>Ingresa Datos para la Visita</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card>
+    <ion-card-content>Día 1</ion-card-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h3>
+            <ion-datetime
+              displayFormat="DD/MM/YYYY"
+              placeholder="Fecha Aquí"
+              cancelText="Cancelar"
+              doneText="Listo"
+              mode="ios"
+            ></ion-datetime>
+          </h3>
+        </ion-col>
+        <ion-col>
+          <ion-grid>
+            <ion-row>
+                <h3>
+              <ion-datetime
+                displayFormat="h:mm A"
+                minuteValues="0,15,30,45"
+                cancelText="Cancelar"
+                doneText="Listo"
+                placeholder="Hora Aquí"
+                mode="ios"
+              ></ion-datetime>
+              </h3>
+            </ion-row>
+            <ion-row>
+                <h3>
+              <ion-datetime
+                displayFormat="h:mm A"
+                minuteValues="0,15,30,45"
+                cancelText="Cancelar"
+                doneText="Listo"
+                placeholder="Hora Aquí"
+                mode="ios"
+              ></ion-datetime>
+              </h3>
+            </ion-row>
+            <ion-row>
+                <h3>
+              <ion-datetime
+                displayFormat="h:mm A"
+                minuteValues="0,15,30,45"
+                cancelText="Cancelar"
+                doneText="Listo"
+                placeholder="Hora Aquí"
+                mode="ios"
+              ></ion-datetime>
+              </h3>
+            </ion-row>
+          </ion-grid>
+        </ion-col> </ion-row
+    ></ion-grid>
+  </ion-card>
+  <ion-button expand="full">GUARDAR</ion-button>
 </ion-content>

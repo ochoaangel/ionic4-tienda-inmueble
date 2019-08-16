@@ -3,56 +3,95 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>
-      Detalle de Inmueble
-    </ion-title>
+    <ion-title> Detalle de Inmueble </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-img src="./assets/myimages/c01.jpg">  </ion-img>
-  <ion-card > 
+  <!-- <ion-img src="{{ urlimage + inmueble.pics[0] + '.jpg' }}"> </ion-img> -->
+  <ion-img src="{{ urlimage+pics+'.jpg'}}"> </ion-img>
+  <ion-card>
     <ion-card-subtitle padding>Precio</ion-card-subtitle>
+
+    <!-- <ion-card-title padding>{{price}} $</ion-card-title> -->
+
+    <ion-grid>
+      <ion-row justify-content-center align-items-center>
+        <h1>{{ price }} $</h1>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <ion-card>
+    <!-- <ion-card-subtitle padding>Precio</ion-card-subtitle> -->
 
     <!-- <ion-card-title padding>100.000.000 $</ion-card-title> -->
 
-
-    <ion-grid >
-        <ion-row justify-content-center align-items-center >
-          <h1>100.000.000 $</h1>
-        </ion-row>
-      </ion-grid>
-
-
-
-
-
+    <ion-grid>
+      <ion-row >
+        <h1 >{{ name }}</h1>
+      </ion-row>
+    </ion-grid>
   </ion-card>
   <ion-grid>
-    <ion-row justify-content-center align-items-center>
+    <ion-row>
       <!-- <ion-col size="6" size-lg="1"  size-md="2" size-sm="3" size-xs="6" *ngFor="let c of [1, 1, 1, 1, 1, 1, 1, 1]"> -->
-      <ion-card *ngFor="let c of [1, 1, 1, 1, 1, 1, 1, 1]">
-        <ion-card-title>Dato {{c}}:</ion-card-title>
-        <ion-card-content>XXXX.XX.x..</ion-card-content>
+      <!-- <ion-card *ngFor="let c of [1, 1, 1, 1, 1, 1, 1, 1]"> -->
+      <ion-card>
+        <ion-card-content>Área construida</ion-card-content>
+        <ion-grid><ion-row justify-content-center align-items-center>
+            <ion-card-title>{{ areac }}</ion-card-title>
+          </ion-row></ion-grid>
+        
+      </ion-card>
+      <ion-card>
+        <ion-card-content>Área terreno</ion-card-content>
+        <ion-grid><ion-row justify-content-center align-items-center>
+        <ion-card-title>{{ areat }}</ion-card-title>
+        </ion-row></ion-grid>
+      </ion-card>
+      <ion-card>
+        <ion-card-content>Puestos Estacionamientos</ion-card-content>
+        <ion-grid><ion-row justify-content-center align-items-center>
+        <ion-card-title>{{ parking }}</ion-card-title>
+        </ion-row></ion-grid>
+      </ion-card>
+      <ion-card>
+        <ion-card-content>Baños</ion-card-content>
+        <ion-grid><ion-row justify-content-center align-items-center>
+        <ion-card-title>{{ bathroom }}</ion-card-title>
+        </ion-row></ion-grid>
+      </ion-card>
+      <ion-card>
+        <ion-card-content>Cuartos</ion-card-content>
+        <ion-grid><ion-row justify-content-center align-items-center>
+        <ion-card-title>{{ bedroom }}</ion-card-title>
+        </ion-row></ion-grid>
+      </ion-card>
+      <ion-card>
+        <ion-card-content>Antiguedad</ion-card-content>
+        <ion-grid><ion-row justify-content-center align-items-center>
+        <ion-card-title>{{ antiquity }}</ion-card-title>
+        </ion-row></ion-grid>
+      </ion-card>
+      <ion-card>
+        <ion-card-content>Pisos</ion-card-content>
+        <ion-grid><ion-row justify-content-center align-items-center>
+        <ion-card-title>{{ floors }}</ion-card-title>
+        </ion-row></ion-grid>
       </ion-card>
     </ion-row>
   </ion-grid>
 
   <ion-card>
     <ion-card-subtitle>Ubicación</ion-card-subtitle>
-    <ion-card-content
-      >Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah
-      Blah Blah
-    </ion-card-content>
+    <ion-card-content>{{ place }} </ion-card-content>
   </ion-card>
 
   <ion-card>
     <ion-card-subtitle>Descripción Adicional</ion-card-subtitle>
-    <ion-card-content
-      >Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah
-      Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah
-      Blah Blah Blah
-    </ion-card-content>
+    <ion-card-content>{{ description }} </ion-card-content>
   </ion-card>
 </ion-content>
-<ion-button expand="fill" color="primary" (click)='planificarvisita()'>Planificar Visita</ion-button>
+<ion-button expand="fill" color="primary" (click)="planificarvisita()"
+  >Planificar Visita</ion-button
+>
